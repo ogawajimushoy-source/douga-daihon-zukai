@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>卒業制作 動画制作用の台本ツール</title>
+  <style>
+    :root {
+      --paper: #f4f1eb;
+      --card: #fffcf8;
+      --ink: #2c2926;
+      --muted: #6d6560;
+      --line: #e4ddd4;
+      --moss: #3f5348;
+      --moss-deep: #314239;
+      --moss-soft: #e5f0e9;
+      --sand: #f6eee4;
+      --sand-ink: #6b4d36;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Segoe UI", "Hiragino Sans", "Yu Gothic UI", "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.7;
+    }
+    main { max-width: 920px; margin: 0 auto; padding: 40px 20px 72px; }
+    .kicker { margin: 0; color: var(--muted); font-size: 13px; letter-spacing: 0.08em; }
+    h1 { margin: 8px 0 12px; font-size: 36px; line-height: 1.25; }
+    .lede { margin: 0; font-size: 18px; }
+    .status {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      background: var(--sand);
+      color: var(--sand-ink);
+      font-size: 14px;
+    }
+    section { margin-top: 40px; }
+    h2 {
+      margin: 0 0 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+      font-size: 22px;
+    }
+    h3 { margin: 0 0 8px; font-size: 16px; }
+    p { margin: 0 0 12px; }
+    .card, .job, .point {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 16px;
+    }
+    figure { margin: 16px 0; }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--card);
+    }
+    figcaption { margin-top: 8px; color: var(--muted); font-size: 13px; }
+    .jobs, .pair, .flow { display: grid; gap: 10px; }
+    .jobs { grid-template-columns: repeat(4, 1fr); margin: 14px 0; }
+    .pair { grid-template-columns: 1fr 1fr; }
+    .flow { grid-template-columns: repeat(7, 1fr); margin: 8px 0 16px; }
+    .job strong { display: block; margin-bottom: 4px; }
+    .job span, .point li { color: var(--muted); font-size: 14px; }
+    .step {
+      display: block;
+      text-align: center;
+      font-size: 13px;
+      padding: 8px 4px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+    .step.now { background: var(--moss); color: white; border-color: var(--moss); }
+    .point ul { margin: 0; padding-left: 1.1em; }
+    .point li + li { margin-top: 8px; }
+    .point.good { background: var(--moss-soft); border-color: #d5e4da; }
+    .before { display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: stretch; }
+    .arrow { align-self: center; color: var(--moss); font-size: 22px; }
+    footer { margin-top: 36px; color: var(--muted); font-size: 13px; }
+    @media (max-width: 760px) {
+      h1 { font-size: 30px; }
+      .jobs, .pair, .before, .flow { grid-template-columns: 1fr; }
+      .arrow { transform: rotate(90deg); text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="kicker">6ヶ月目 卒業制作</p>
+    <h1>動画制作用の台本ツール</h1>
+    <p class="lede">企画書、台本確認、インサート決め、進捗の把握をまとめたツールです。</p>
+    <p class="status">いまは自分の把握用に動かしています。顧客に渡す確認は、ツールが整ってから足します。</p>
+
+    <section>
+      <h2>作ったもの</h2>
+      <p>採用サイトに入れるインタビューと対談を、企業ごとに1本の動画として開きます。画面の名前は「台本進行」です。</p>
+      <div class="jobs">
+        <div class="job"><strong>企画書</strong><span>誰が出るか、目的、雰囲気、参考にする動画を同じ場所に書きます。</span></div>
+        <div class="job"><strong>台本確認</strong><span>質問とセリフを並べ、自分で読み返します。プレビューでは台本だけを見ます。</span></div>
+        <div class="job"><strong>インサート決め</strong><span>撮影場所、カメラの台数、入れておきたい画を残します。</span></div>
+        <div class="job"><strong>進捗の把握</strong><span>打ち合わせから完了まで、今の工程とメモを動画ごとに見ます。</span></div>
+      </div>
+      <figure>
+        <img src="editor.png" alt="企画の記入欄と、打ち合わせから完了までの工程">
+        <figcaption>企画と進捗。文言はサンプルで、実在の企業や案件は入れていません。</figcaption>
+      </figure>
+      <p>工程は手で進めます。戻すこともできます。</p>
+      <div class="flow">
+        <div class="step">打ち合わせ</div>
+        <div class="step now">台本</div>
+        <div class="step">ロケハン</div>
+        <div class="step">撮影</div>
+        <div class="step">編集</div>
+        <div class="step">最終確認</div>
+        <div class="step">完了</div>
+      </div>
+      <figure>
+        <img src="inserts.png" alt="撮影イメージと、質問ごとの台本">
+        <figcaption>インサートと台本。入れたい画と、質問の流れを続けて見ます。</figcaption>
+      </figure>
+      <figure>
+        <img src="preview.png" alt="台本だけを読むプレビュー">
+        <figcaption>台本確認用のプレビュー。進捗やメモは出しません。</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>解決する面倒・課題</h2>
+      <p>採用コンサルの仕事で、企業ごとの採用動画を作っています。企画、台本の確認、インサート、進捗が別々の場所にあると、1本の動画のたびに探し直します。</p>
+      <div class="before">
+        <div class="card">
+          <h3>これまでの置き場所</h3>
+          <p>企画は文書、進捗は表、撮影で入れる画は別のメモです。</p>
+        </div>
+        <div class="arrow">→</div>
+        <div class="card">
+          <h3>このツールでやること</h3>
+          <p>企業ごとの情報を、このツール一本に置きます。1本を開けば、企画から今の工程まで見えます。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>作りたいと思った理由</h2>
+      <p>各企業の企画や確認、進捗などの情報を、このツール一本にしたかったからです。</p>
+      <p>表と文書に分かれたままでは、自分でも全体を追い切れません。まず自分が見て分かる形にまとめたくて作りました。</p>
+    </section>
+
+    <section>
+      <h2>工夫したポイントと苦戦したポイント</h2>
+      <div class="pair">
+        <div class="point good">
+          <h3>工夫したこと</h3>
+          <ul>
+            <li>画面は台本として読める形にしました。表計算は保管場所で、操作画面にはしていません。</li>
+            <li>企業や動画によって項目が違うので、追加、削除、名前の変更ができます。</li>
+            <li>質問の下書きは、ブラウザのAIに頼んだ文章を貼って確認してから欄に入れます。このツール自身はAIを呼びません。</li>
+            <li>プレビュー、コピー、印刷に出すのは台本だけです。進捗とメモは混ぜません。</li>
+            <li>一覧、台本、メモの幅は、境界をドラッグして変えられます。</li>
+          </ul>
+        </div>
+        <div class="point">
+          <h3>苦戦したこと</h3>
+          <ul>
+            <li>削除が目立ち、プレビューの場所も分かりにくかったです。削除は欄の外の小さい印にし、プレビューは画面上部へ移しました。</li>
+            <li>枠とボタンの左端が少しずつずれていました。項目名、記入欄、質問の左を揃えました。</li>
+            <li>自分のパソコンの中だけで開くと、その場のサーバーを止めたときにページが開けなくなります。中身はブラウザに残ります。別のパソコンから開く公開は、これからです。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>これから</h2>
+      <p>今後は、自分の把握用に動かします。ツールとして整ってきたら、顧客に渡して確認してもらう機能を追加する予定です。</p>
+    </section>
+
+    <footer>
+      <p>企業名、個人名、実在の案件内容は載せていません。画面写真の文字は、説明用のサンプルです。</p>
+    </footer>
+  </main>
+</body>
+</html>
